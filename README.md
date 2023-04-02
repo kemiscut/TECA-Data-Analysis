@@ -59,7 +59,8 @@ Since the datasets consist of two tables, a many to one relationship was automat
 
 ## Data Analysis Expressions
 
-I used several data analysis expressions during the processo of building this report
+I used several data analysis expressions during the process of building this report:
+
 Avg. Sales per Day = AVERAGEX(VALUES(tecaPosSmall[date]),[Total Sales])
 
 Best Selling Day = 
