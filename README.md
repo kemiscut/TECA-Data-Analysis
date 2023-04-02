@@ -57,6 +57,37 @@ Since the datasets consist of two tables, a many to one relationship was automat
 
 ![](https://github.com/kemiscut/TECA-Data-Analysis/blob/93082ebd86ce4852fcd2004e57032989132bc46d/data%20model.jpg)
 
+## Data Analysis Expressions
+
+I used several data analysis expressions during the processo of building this report
+Avg. Sales per Day = AVERAGEX(VALUES(tecaPosSmall[date]),[Total Sales])
+
+Best Selling Day = 
+MAXX(
+    TOPN(1,
+    SUMMARIZE(
+        tecaPosSmall,
+        tecaPosSmall[Days],
+        "Selling Days", [Avg. Sales per Day]),
+        [Selling Days]),
+tecaPosSmall[Days])
+
+Nonalcoholic Beverages Sales in Summer = IF(ISBLANK(CALCULATE(SUM(tecaPosSmall[revenue]),tecaPosSmall[super_parent_name] = "Nonalcholic beverages")),0,CALCULATE(SUM(tecaPosSmall[revenue]),tecaPosSmall[super_parent_name] = "Nonalcholic beverages"))
+
+Summer Sales 2018 = CALCULATE(SUM(tecaPosSmall[revenue]),DATESBETWEEN(tecaPosSmall[date],DATE(2018,6,1),DATE(2018,8,31)))
+
+Summer Transactions 2018 = CALCULATE(COUNTROWS(tecaPosSmall),DATESBETWEEN(tecaPosSmall[date],DATE(2018,6,1),DATE(2018,8,31)))
+
+Top Customer = MAXX(
+    TOPN(1,
+    SUMMARIZE(tecaPosSmall, tecaPosSmall[customer_id], "Rev", [Total Sales]),
+    [Rev],DESC),
+    tecaPosSmall[customer_id])
+    
+ Winter Sales 2018 = CALCULATE(SUM(tecaPosSmall[revenue]),DATESBETWEEN(tecaPosSmall[date],DATE(2018,12,1),DATE(2019,2,28)))
+ 
+ Winter Transactions 2018 = CALCULATE(COUNTROWS(tecaPosSmall),DATESBETWEEN(tecaPosSmall[date],DATE(2018,12,1),DATE(2019,2,28)))
+
 ## Data Visualization
 
 The report comprises 3 pages
