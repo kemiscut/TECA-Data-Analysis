@@ -67,5 +67,5 @@ The report comprises 3 pages
 ![](https://github.com/kemiscut/TECA-Data-Analysis/blob/93082ebd86ce4852fcd2004e57032989132bc46d/teca%202_page-0001.jpg)
 ![](https://github.com/kemiscut/TECA-Data-Analysis/blob/93082ebd86ce4852fcd2004e57032989132bc46d/teca%202_page-0002.jpg)
 ![](https://github.com/kemiscut/TECA-Data-Analysis/blob/93082ebd86ce4852fcd2004e57032989132bc46d/teca%202_page-0003.jpg)
-You can interact with the report [here]()
+You can interact with the report [here](http://bit.ly/431f6Ks)
 
